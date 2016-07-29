@@ -1,0 +1,33 @@
+BLESuite_CLI README
+
+BLESuite_CLI is a command line tool to enable an easier way to test Bluetooth Low Energy (BLE) devices. 
+This tool uses the BLESuite Python library, which utilizes pygattlib and the Bluez Bluetooth stack, allowing 
+us to scan, read from, and write to BLE devices using Generic Attribute Profile (GATT) over the 
+Attribute protocol (ATT). The goal of this tool is to create an alternative to the Bluez gatttool typically 
+used for communicating with BLE devices using the GATT/ATT protocol.
+
+Features:
+    * Command line tool and stand-alone Python package
+    * Scan for BTLE devices
+    * Scan BTLE devices for primary services and characteristics
+    * SmartScan - Scan a BTLE device for basic information, primary services, characteristics, and then 
+    determining which descriptors are present, their handle, permissions, and current value (if applicable)
+    * Write arbitrary values to a BTLE device
+    * Read values from a specific handle and/or UUID on a BTLE device
+
+Features still underway or planned:
+    * Still finishing subscribe command line option, but the basics are in place
+    * Investigating man-in-the-middle techniques that can be added
+
+Note to the reader:
+    This tool was developed and tested on Debian 8. Specifically the testing distribution that
+        includes a more current version of the Bluez Bluetooth stack (version 5.36 at the time of writing this)
+
+    In order to access Bluetooth Low Energy functionality, you must have access to a Bluetooth adapter that
+        supports it.
+
+Installation Requirements:
+    * BLESuite
+    
+To run command line tool:
+   Run directly using python bleSuite-runner.py
